@@ -1,4 +1,5 @@
-(ns macchiato.fs)
+(ns macchiato.fs
+  (:refer-clojure :exclude [exists?]))
 
 (def fs (js/require "fs"))
 
