@@ -3,8 +3,8 @@
   :url "https://github.com/yogthos/macchiato-framework/macchiato-fs"
   :scm {:name "git"
          :url "https://github.com/macchiato-framework/macchiato-fs.git"}
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+   :license {:name "MIT License"
+            :url "http://opensource.org/licenses/MIT"}
   :clojurescript? true
   :dependencies []
   :plugins [[codox "0.6.4"]
