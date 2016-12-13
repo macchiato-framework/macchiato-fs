@@ -6,7 +6,8 @@
   :license {:name "MIT License"
             :url  "http://opensource.org/licenses/MIT"}
   :clojurescript? true
-  :dependencies []
+  :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
+                 [org.clojure/clojurescript "1.9.293" :scope "provided"]]
   :plugins [[lein-cljsbuild "1.1.4"]
             [codox "0.6.4"]
             [lein-doo "0.1.7"]
