@@ -15,6 +15,11 @@
   (is (false? (fs/directory? "project.clj")))
   (is (true? (fs/directory? "test"))))
 
+(deftest read-dir-sync-test
+  (is (thrown? js/Error (fs/read-dir-sync "invalid/")))
+  (is (= ["data", "macchiato"] (fs/read-dir-sync "test/")))
+  (is (= ["foo.edn", "foo.txt"] (fs/read-dir-sync "test/data"))))
+
 (deftest spit-slurp-test
   (fs/spit text-path text-value)
   (fs/spit data-path data-value)

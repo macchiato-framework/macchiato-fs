@@ -21,6 +21,11 @@
 (defn directory? [path]
   (.isDirectory (.lstatSync fs path)))
 
+(defn read-dir-sync [path]
+  "Reads a folder synchronously and returns the file names as a Clojure vector."
+  [path]
+  (js->clj (.readdirSync fs path)))
+
 (defn slurp [filename & {:keys [encoding]}]
   (when (exists? filename)
     (.toString
