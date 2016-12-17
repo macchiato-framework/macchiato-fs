@@ -9,7 +9,7 @@
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [org.clojure/clojurescript "1.9.293" :scope "provided"]]
   :plugins [[lein-cljsbuild "1.1.4"]
-            [codox "0.6.4"]
+            [lein-codox "0.10.2"]
             [lein-doo "0.1.7"]
             [lein-npm "0.6.2"]]
   :npm {:dependencies []}

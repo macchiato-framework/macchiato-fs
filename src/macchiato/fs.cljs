@@ -77,5 +77,11 @@
   (when (exists? path)
     (.stat fs path (fn [err stats] (cb err (obj->clj stats))))))
 
-(defn stream [path]
+(defn read-stream [path]
   (.createReadStream fs path))
+
+(defn write-stream [path]
+  (.createReadStream fs path))
+
+(defn pipe [input-stream output-stream]
+  (.pipe fs input-stream output-stream))
