@@ -1,7 +1,7 @@
 # macchiato/fs changelog
 
 
-## 0.0.4-SNAPSHOT
+## 0.0.4
 
 ### Added
 - Changelog
