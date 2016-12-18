@@ -1,8 +1,10 @@
 (ns macchiato.fs
   (:refer-clojure :exclude [exists?])
-  (:require [clojure.string :refer [ends-with?]]))
+  (:require
+    [cljs.nodejs :as node]
+    [clojure.string :refer [ends-with?]]))
 
-(def fs (js/require "fs"))
+(def fs (node/require "fs"))
 
 (def path-separator (.-sep (js/require "path")))
 
