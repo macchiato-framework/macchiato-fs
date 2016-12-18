@@ -1,7 +1,10 @@
 (ns macchiato.fs
-  (:refer-clojure :exclude [exists?]))
+  (:refer-clojure :exclude [exists?])
+  (:require
+    [cljs.nodejs :as node]
+    [clojure.string :refer [ends-with?]]))
 
-(def fs (js/require "fs"))
+(def fs (node/require "fs"))
 
 (def path-separator (.-sep (js/require "path")))
 
@@ -20,6 +23,19 @@
 
 (defn directory? [path]
   (.isDirectory (.lstatSync fs path)))
+
+(defn with-separator
+  "Receives a path, and returns the same value if it ends in a path separator,
+  or the path with the path separator appended at the end if otherwise."
+  [path]
+  (if (ends-with? path path-separator)
+    path
+    (str path path-separator)))
+
+(defn read-dir-sync
+  "Reads a folder synchronously and returns the file names as a Clojure vector."
+  [path]
+  (js->clj (.readdirSync fs path)))
 
 (defn slurp [filename & {:keys [encoding]}]
   (when (exists? filename)
