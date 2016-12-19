@@ -30,4 +30,9 @@
    ["do"
     ["npm" "install"]
     ["clean"]
+    ["with-profile" "test" "doo" "node" "once"]]
+   "test-watch"
+   ["do"
+    ["npm" "install"]
+    ["clean"]
     ["with-profile" "test" "doo" "node"]]})
