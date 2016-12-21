@@ -1,7 +1,11 @@
 # macchiato/fs changelog
 
+## 0.0.5-SNAPSHOT
 
-## 0.0.4
+## Other
+- CircleCI integration
+
+## 0.0.4 (20161218)
 
 ### Added
 - Changelog

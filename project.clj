@@ -1,4 +1,4 @@
-(defproject macchiato/fs "0.0.4"
+(defproject macchiato/fs "0.0.5-SNAPSHOT"
   :description "filesystem utilities"
   :url "https://github.com/yogthos/macchiato-framework/macchiato-fs"
   :scm {:name "git"
@@ -27,6 +27,11 @@
               :doo {:build "test"}}}
   :aliases
   {"test"
+   ["do"
+    ["npm" "install"]
+    ["clean"]
+    ["with-profile" "test" "doo" "node" "once"]]
+   "test-watch"
    ["do"
     ["npm" "install"]
     ["clean"]
