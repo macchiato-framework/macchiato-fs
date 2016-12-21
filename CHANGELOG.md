@@ -7,6 +7,7 @@ BREAKING:
 - Moved `with-separator` to `fs.path`
 
 ### Other
+
 - CircleCI integration
 
 ## 0.0.4 (20161218)
