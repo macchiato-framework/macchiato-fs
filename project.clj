@@ -1,4 +1,4 @@
-(defproject macchiato/fs "0.0.6-SNAPSHOT"
+(defproject macchiato/fs "0.0.6"
   :description "filesystem utilities"
   :url "https://github.com/yogthos/macchiato-framework/macchiato-fs"
   :scm {:name "git"
