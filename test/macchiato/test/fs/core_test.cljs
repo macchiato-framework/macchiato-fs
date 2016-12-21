@@ -15,12 +15,6 @@
   (is (false? (fs/directory? "project.clj")))
   (is (true? (fs/directory? "test"))))
 
-(deftest with-separator-test
-  (is (= "test/" (fs/with-separator "test")))
-  (is (= "test/" (fs/with-separator "test/")))
-  (is (= "test.txt/" (fs/with-separator "test.txt")))       ; Does not check if it's an actual folder
-  (is (= "for/test/" (fs/with-separator "for/test"))))
-
 (deftest read-dir-sync-test
   (is (thrown? js/Error (fs/read-dir-sync "invalid/")))
   (is (= ["data", "macchiato"] (fs/read-dir-sync "test/")))

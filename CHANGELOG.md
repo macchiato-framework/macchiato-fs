@@ -1,8 +1,12 @@
 # macchiato/fs changelog
 
-## 0.0.5-SNAPSHOT
+## 0.0.5, 0.0.6
 
-## Other
+BREAKING:
+- New `fs.path` namespace, @yogthos moved several path-specific functions there.
+- Moved `with-separator` to `fs.path`
+
+### Other
 - CircleCI integration
 
 ## 0.0.4 (20161218)
