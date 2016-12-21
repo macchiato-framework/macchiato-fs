@@ -1,5 +1,6 @@
 (ns macchiato.fs.path
-  (:require [cljs.spec :as s]
+  (:require [clojure.string :refer [ends-with?]]
+            [cljs.spec :as s]
             [cljs.nodejs :as node]))
 
 (def js-path (node/require "path"))
@@ -15,8 +16,8 @@
 
 (defn- obj->map
   [o & {:keys [keywordize? transform]
-        :or {keywordize? true
-             transform identity}}]
+        :or   {keywordize? true
+               transform   identity}}]
   (reduce
     (fn [props k]
       (assoc props (if keywordize? (keyword k) k) (transform (aget o k))))
@@ -94,3 +95,11 @@
    returns: string"
   [& ps]
   (js-apply (.-resolve js-path) nil ps))
+
+(defn with-separator
+  "Receives a path, and returns the same value if it ends in a path separator,
+  or the path with the path separator appended at the end if otherwise."
+  [path]
+  (if (ends-with? path separator)
+    path
+    (str path separator)))
