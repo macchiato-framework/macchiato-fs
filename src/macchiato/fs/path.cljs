@@ -1,7 +1,6 @@
 (ns macchiato.fs.path
   (:require [clojure.string :refer [ends-with?]]
             [macchiato.fs.util :refer [js-apply obj->map]]
-            [cljs.spec :as s]
             [cljs.nodejs :as node]))
 
 (def js-path (node/require "path"))
