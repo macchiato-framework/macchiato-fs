@@ -1,4 +1,5 @@
 (ns macchiato.fs.path
+  (:refer-clojure :exclude [resolve])
   (:require [clojure.string :refer [ends-with?]]
             [macchiato.fs.util :refer [js-apply obj->map]]
             [cljs.nodejs :as node]))
