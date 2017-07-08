@@ -1,5 +1,9 @@
 # macchiato/fs changelog
 
+## 0.0.7-0.1.0
+
+Bug fixing. We're bumping version to 0.1.0 even though there aren't any breaking changes to break from the 0.0.x versioning issues.
+
 ## 0.0.5, 0.0.6
 
 BREAKING:
