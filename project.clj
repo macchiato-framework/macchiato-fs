@@ -1,7 +1,7 @@
-(defproject macchiato/fs "0.1.0-SNAPSHOT"
+(defproject macchiato/fs "0.1.0"
 >>>>>>> master
   :description "filesystem utilities"
-  :url "https://github.com/yogthos/macchiato-framework/macchiato-fs"
+  :url "https://github.com/macchiato-framework/macchiato-fs"
   :scm {:name "git"
         :url  "https://github.com/macchiato-framework/macchiato-fs.git"}
   :license {:name "MIT License"
