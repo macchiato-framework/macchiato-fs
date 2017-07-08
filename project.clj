@@ -1,4 +1,4 @@
-(defproject macchiato/fs "0.1.0"
+(defproject macchiato/fs "0.1.1-SNAPSHOT"
 >>>>>>> master
   :description "filesystem utilities"
   :url "https://github.com/macchiato-framework/macchiato-fs"
