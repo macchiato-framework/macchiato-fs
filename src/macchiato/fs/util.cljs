@@ -1,5 +1,4 @@
-(ns macchiato.fs.util
-  (:require [cljs.nodejs :as node]))
+(ns macchiato.fs.util)
 
 (defn js-apply
   "Applies a javascript function to a 'this' context and arguments
