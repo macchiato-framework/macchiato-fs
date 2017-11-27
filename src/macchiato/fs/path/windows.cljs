@@ -1,8 +1,8 @@
 (ns macchiato.fs.path.windows
-  (:require [cljs.nodejs :as node]
-            [macchiato.fs.util :refer [js-apply obj->map]]))
+  (:require [macchiato.fs.util :refer [js-apply obj->map]]
+            ["path" :as path]))
 
-(def win32 (.-win32 (node/require "path")))
+(def win32 (.-win32 path))
 
 (defn basename
   "Returns the basename (file without directory) of the path
