@@ -1,4 +1,4 @@
-(defproject macchiato/fs "0.1.1"
+(defproject macchiato/fs "0.2.0"
   :description "filesystem utilities"
   :url "https://github.com/macchiato-framework/macchiato-fs"
   :scm {:name "git"
@@ -7,7 +7,7 @@
             :url  "http://opensource.org/licenses/MIT"}
   :clojurescript? true
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
-                 [org.clojure/clojurescript "1.9.671" :scope "provided"]]
+                 [org.clojure/clojurescript "1.9.946" :scope "provided"]]
   :plugins [[lein-cljsbuild "1.1.4"]
             [lein-codox "0.10.2"]
             [lein-doo "0.1.7"]

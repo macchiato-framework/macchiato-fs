@@ -1,8 +1,8 @@
 (ns macchiato.fs.path.posix
-  (:require [cljs.nodejs :as node]
-            [macchiato.fs.util :refer [js-apply obj->map]]))
+  (:require [macchiato.fs.util :refer [js-apply obj->map]]
+            ["path" :as path]))
 
-(def posix (.-posix (node/require "path")))
+(def posix (.-posix path))
 
 (defn basename
   "Returns the basename (file without directory) of the path
@@ -74,5 +74,3 @@
    returns: string"
   [& ps]
   (js-apply (.-resolve posix) nil ps))
-
-
