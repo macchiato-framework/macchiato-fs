@@ -1,5 +1,11 @@
 # macchiato/fs changelog
 
+## 0.2.0
+
+Using (require '["fs" :as fs]) style requires. The cljs.nodejs/require style causes issues with advanced compilation  mode.
+
+*Warning*: Tests are passing on CI but failing on macOS. We may have missed something OSX-specific.
+
 ## 0.0.7-0.1.0
 
 Bug fixing. We're bumping version to 0.1.0 even though there aren't any breaking changes to break from the 0.0.x versioning issues.
