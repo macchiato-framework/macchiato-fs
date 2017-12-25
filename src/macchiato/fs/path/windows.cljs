@@ -1,4 +1,5 @@
 (ns macchiato.fs.path.windows
+  (:refer-clojure :exclude [resolve])
   (:require [macchiato.fs.util :refer [js-apply obj->map]]
             ["path" :as path]))
 
