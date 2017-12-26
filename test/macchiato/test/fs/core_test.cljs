@@ -1,5 +1,6 @@
 (ns macchiato.test.fs.core-test
   (:require
+    [clojure.set :refer [difference]]
     [macchiato.fs :as fs]
     [cljs.test :refer-macros [is are deftest testing use-fixtures]]))
 
@@ -38,5 +39,7 @@
 
 (deftest stat-test
   (is
-    (= [:ino :uid :atime :mode :size :gid :ctime :nlink :blocks :blksize :birthtime :dev :rdev :mtime]
-       (keys (fs/stat text-path)))))
+    (empty?
+      (difference
+        #{:ino :uid :atime :mode :size :gid :ctime :nlink :blocks :blksize :birthtime :dev :rdev :mtime}
+        (set (keys (fs/stat text-path)))))))
