@@ -1,5 +1,9 @@
 # macchiato/fs changelog
 
+## 0.2.1
+
+Test improvements to work cross-platform.
+
 ## 0.2.0
 
 Using (require '["fs" :as fs]) style requires. The cljs.nodejs/require style causes issues with advanced compilation  mode.
