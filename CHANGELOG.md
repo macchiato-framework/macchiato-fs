@@ -1,5 +1,9 @@
 # macchiato/fs changelog
 
+## 0.2.2-SNAPSHOT
+
+Switched development process to Github Flow. Removed `develop` branch.
+
 ## 0.2.1
 
 Test improvements to work cross-platform.
