@@ -31,7 +31,9 @@
 (deftest spit-async-test
   (fs/spit text-path text-value)
   (fs/delete text-path)
-  (fs/spit-async text-path text-value (fn [_] (is false))))
+  (async
+   done
+   (fs/spit-async text-path text-value (fn [_] (is (= text-value (fs/slurp text-path))) (done)))))
 
 (deftest slurp-test
   (fs/delete text-path)
@@ -42,7 +44,9 @@
 (deftest slurp-async-test
   (fs/delete text-path)
   (fs/spit text-path text-value)
-  (fs/slurp-async text-path (fn [value] (is (= text-value value)))))
+  (async 
+   done
+   (fs/slurp-async text-path (fn [err value] (is (= text-value value)) (done)))))
 
 (deftest stat-test
   (is

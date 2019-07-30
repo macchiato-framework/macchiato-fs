@@ -3,4 +3,5 @@ target/
 pom.xml*
 .idea/
 *.iml
+package.json
 package-lock.json
