@@ -24,18 +24,16 @@
   (js->clj (fs/readdirSync path)))
 
 (defn slurp [filename & {:keys [encoding]}]
-  (when (exists? filename)
-    (.toString
-      (if encoding
-        (fs/readFileSync filename encoding)
-        (fs/readFileSync filename)))))
+  (.toString
+   (if encoding
+     (fs/readFileSync filename encoding)
+     (fs/readFileSync filename))))
 
 (defn slurp-async [filename cb & {:keys [encoding]}]
-  (when (exists? filename)
-    (let [str-cb (fn [err data] (cb err (.toString data)))]
-      (if encoding
-        (fs/readFile filename encoding str-cb)
-        (fs/readFile filename str-cb)))))
+  (let [str-cb (fn [err data] (cb err (.toString data)))]
+    (if encoding
+      (fs/readFile filename encoding str-cb)
+      (fs/readFile filename str-cb))))
 
 (defn spit [filename data & {:keys [encoding mode flag]
                              :or   {encoding "utf8"
