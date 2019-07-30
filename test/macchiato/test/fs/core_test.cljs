@@ -2,10 +2,11 @@
   (:require
     [clojure.set :refer [difference]]
     [macchiato.fs :as fs]
-    [cljs.test :refer-macros [is are deftest testing use-fixtures]]))
+    [cljs.test :refer-macros [is are deftest testing use-fixtures async]]))
 
 (def text-path "test/data/foo.txt")
 (def data-path "test/data/foo.edn")
+(def non-existing-path "/test/data/does-not-exists")
 
 (def text-value "this is a test")
 (def data-value {:foo "bar"})
@@ -31,6 +32,12 @@
   (fs/spit text-path text-value)
   (fs/delete text-path)
   (fs/spit-async text-path text-value (fn [_] (is false))))
+
+(deftest slurp-test
+  (fs/delete text-path)
+  (fs/spit text-path text-value)
+  (is (= text-value (fs/slurp text-path)))
+  (is (thrown? js/Error (fs/slurp non-existing-path))))
 
 (deftest slurp-async-test
   (fs/delete text-path)
